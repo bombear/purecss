@@ -1,0 +1,136 @@
+#box{
+    background-color: #999;
+    height: 500px;
+    width: 500px;
+    border:3px solid #ddd;
+    position:relative;
+    
+}
+
+#innerBox{
+    background-color: #eee;
+    border: 3px solid #ddd;
+    position: absolute;
+    margin-left: 30px;
+    margin-top: 30px;
+    height: 434px;/*calc(100%-60px); */
+    width: 434px;/*calc(100%-60px);*/
+    
+}
+
+#food{
+    background-color: transparent;
+    /*border:2px dotted #333;*/
+    margin-top: 14px;
+    margin-left:14px;
+    position: absolute;
+    height:468px;
+    width:468px;
+    background-image: linear-gradient(to right, black 33%, rgba(255,255,255,0) 0%);
+    background-position: bottom top;
+    background-size: 10px 3px;
+    background-repeat: repeat-x;
+}
+
+#pacman{
+    top: 0px;
+    left: 30px;
+    width: 0px;
+    height: 0px;
+    border: 0px solid #222;
+    border-radius: 50%;
+    position:relative;
+    animation: moving 15s linear infinite;
+    
+    
+}
+
+#eye{
+    top: 4px;
+    right: 11px;
+    width: 0px;
+    height: 0px;
+    border: 2px solid #666;
+    border-radius: 50%;
+    position:absolute;
+}
+
+#pacman::after, #packman::before{
+        
+    content:'';
+    top: 0px;
+    right: 0px;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    position:absolute;
+    border: 15px solid #cc0;
+    transform-origin: center;
+    transform:rotate(45deg);
+}
+
+#pacman::before{         
+    content:'';
+    top: 0px;
+    right: 0px;
+    width: 0px;
+    height: 0px;
+    border-radius: 50%;
+    position:absolute;
+    border: 15px solid #cc0;
+    transform-origin: center;
+    transform:rotate(45deg);
+}
+
+
+#pacman:after{
+    border-left-color: transparent;
+    border-top-color: transparent;
+    animation: eating-top 1s linear infinite;
+    
+}
+
+#pacman:before{
+   border-right-color: transparent;
+    border-bottom-color: transparent;
+    animation: eating-bottom 1s linear infinite;
+}
+
+@keyframes eating-top{
+    0%,100%{
+    transform:rotate(45deg);
+    }
+    50%{
+    transform:rotate(90deg);
+    }
+}
+
+@keyframes eating-bottom{
+    0%,100%{
+    transform:rotate(45deg);
+    }
+    50%{
+    transform:rotate(0deg);
+    }
+}
+
+@keyframes moving{
+    0%,100%{  
+        left:30px;
+    }
+    25%{
+        top:0;
+        left:500px;
+    }
+    50% {
+        top:470;
+        left:500px;
+    }
+    75% {
+        top:470;
+        left:30px;
+    }
+
+    
+}
+
