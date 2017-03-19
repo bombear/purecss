@@ -1,20 +1,21 @@
 #box{
     background-color: #999;
     height: 500px;
-    width: 500px;
+    width: 400px;
     border:3px solid #ddd;
     position:relative;
     
 }
 
 #innerBox{
+    box-sizing: border-box;
     background-color: #eee;
     border: 3px solid #ddd;
     position: absolute;
     margin-left: 30px;
     margin-top: 30px;
-    height: 434px;/*calc(100%-60px); */
-    width: 434px;/*calc(100%-60px);*/
+    height: calc(100% - 60px); 
+    width: calc(100% - 60px);
     
 }
 
@@ -51,26 +52,15 @@
     right: -1px;
     width: 0px;
     height: 0px;
-    border: 2px solid #666;
+    border: 2px solid #777;
     border-radius: 50%;
     position:absolute;
     z-index: 2;
     animation: eyeMovement 1s ease-in-out infinite;
 }
 
-#pacman::after, #packman::before{
+#pacman::after, #pacman::before{
         
-    content:'';
-    top: -15px;
-    left: -15px;
-    width: 0px;
-    height: 0px;
-    border-radius: 50%;
-    position:absolute;
-    border: 15px solid #cc0;
-}
-
-#pacman::before{         
     content:'';
     top: -15px;
     left: -15px;
@@ -129,18 +119,18 @@
     }
     25%{
         top:15px;
-        left:485px;
+        left:calc(100% - 15px);
     }
     49%{
         transform:rotateY(0);
     }
     50% {
         transform: rotateY(180deg);
-        top:485px;
-        left:485px;
+        top:calc(100% - 15px);
+        left:calc(100% - 15px);
     }
     75% {
-        top:485px;
+        top:calc(100% - 15px);
         left:15px;
     }
     99%{
