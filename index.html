@@ -1,14 +1,20 @@
 <html>
-    <head>
-        <title>Pure CSS</title>
-        <link rel="stylesheet" type="text/css" href="style.css">  
-    </head>
-    <body>
-        <div id="box">
-            <div id="pacman"><span id="eye"></span></div>
-            <div id="innerBox"></div>
-            <!--<div id="food"></div>-->
-        </div>
-    </body>
-
+<head>
+    <title>Pure CSS</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="purecss.js"></script>
+</head>
+    <header id="fullHeader">
+            <nav id="mainNavigation">
+                <div id="siteIdentity"><img alt="SITE LOGO" height="64px" width="250px" src="purecss_logo.png"></div>
+                <ul id="mainMenu">
+                    <li><button onclick="pacman()">Pacman</button></li>
+                    <li> <button onclick="clearDebug()">Coming soon...</button></li>
+                </ul>
+            </nav>      
+    </header>
+<body>
+    <p>The page is designed for testing pure CSS animations.<span><br>(ofc i need JavaSript for loading the css animation into the container. :) )</span></p>
+    <div id="container"></div>
+</body>
 </html>
