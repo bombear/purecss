@@ -52,6 +52,11 @@ body{
     width:100%;
     }
 
+.menuElement {
+    padding:0 15 0 15;
+    border-left: 2px solid #666;
+}
+
 li{
     list-style-type: none;
     padding-top:20px;
@@ -61,13 +66,12 @@ li button {
     background-color: #333;
     color:lightgrey; 
     height: 25px;
-    padding:0 15 0 15;
     font-size: 20px;
     font-family: 'Brandon Grotesque','brandon-grotesque','Helvetica','sans-serif';
     text-decoration: none;
     border: none;
     text-transform: uppercase;
-    border-left: 2px solid #666;
+    
     
 }
 
@@ -126,6 +130,8 @@ p span {
 .animationBody{
     overflow: hidden;
 }
+
+
 /*pacman*/
 
 
@@ -307,10 +313,10 @@ p span {
     }
     50%{
         transform: translate(460px,0);
-    }
-    
-    
-}@keyframes fall {
+    }    
+}
+
+@keyframes fall {
     0%,50%, 100%{
         transform: translate(0,0);
         
@@ -322,3 +328,115 @@ p span {
 }
 
 /*jumpingMan*/
+
+#man{
+    height:160px;
+    width:50px;
+    background-color:transparent; //#ccc;
+    position:relative;
+    top:40%;
+    left: 10%;
+    animation: manJump 3.6s cubic-bezier(0.310, 0.440, 0.445, 1.650) infinite;
+}
+
+#manHead {
+    background-color: #222;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    position:absolute;
+    top:0;
+    left:10%;
+}
+
+.manEye {
+    height: 0;
+    width: 0;
+    border: 3px solid #ddd;
+    border-radius: 50%;
+    position:absolute;
+    top:25%;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    transform: rotate(45deg);
+}
+
+#manLeftEye {
+    left:15%;
+}
+
+#manRightEye {
+    right:15%;
+}
+
+#manMouth {
+    height: 15px;
+    width: 15px;
+    background-color: transparent;
+    border-radius: 50%;
+    position:absolute;
+    transform: rotate(45deg);
+    box-shadow: 2px 2px 0 0 #ddd;
+    top:28%;
+    left:24%;
+}
+
+
+#talkbubble {
+left:70px;
+   width: 120px;
+   height: 80px;
+    top: -20px;
+   background: #ccc;
+   position: absolute;
+   -moz-border-radius:    10px;
+   -webkit-border-radius: 10px;
+   border-radius:         10px;
+    animation: talkbubbleFade 3.6s linear infinite;
+}
+#talkbubble:before {
+   content:"";
+   position: absolute;
+   right: 100%;
+   top: 26px;
+   width: 0;
+   height: 0;
+   border-top: 13px solid transparent;
+   border-right: 26px solid #ccc;
+   border-bottom: 13px solid transparent;
+}
+
+
+#talkbubble p {
+    position: absolute;
+    color:#444;
+    font-family: 'Brandon Grotesque','brandon-grotesque','Helvetica','sans-serif';
+    font-size: 30px;
+    text-align: center;
+    bottom: -5px;
+    left:30px;
+    
+}
+
+@keyframes manJump {
+    0%, 100%{
+        transform: translate(0,0);
+        
+    }
+    50%{
+        transform: translate(0,440px);
+    } 
+
+}
+
+@keyframes talkbubbleFade {
+    10%, 70%{
+        opacity:0;
+        
+    }
+    80%, 0%{
+        opacity:1;
+    }
+
+}
+
