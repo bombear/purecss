@@ -3,5 +3,5 @@ function pacman() {
 }
 
 function jumpingMan() {
-     document.getElementById("container").innerHTML='<object type="text/html" data="jumpingMan.html" ></object>';
+    document.getElementById("container").innerHTML='<object type="text/html" data="jumpingman.html" ></object>';
 }
